@@ -40,3 +40,10 @@ services:
       KAFKA_BROKER_CONNECT: "kafka:15555"
     depends_on:
       - kafka
+  kafka-exporter:
+    image: danielqsj/kafka-exporter 
+    command: ["--kafka.server=kafka:15555"] # [, "--kafka.server=another-server"]
+    ports:
+      - 9308:9308
+    depends_on:
+      - kafka
