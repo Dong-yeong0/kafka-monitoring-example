@@ -1,0 +1,44 @@
+{
+    "version": "0.1.0",
+    "configurations": [
+        {
+            "cwd": "${workspaceRoot}/app",
+            "name": "Producer",
+            "type": "python",
+            "request": "launch",
+            "program": "producer",
+            "env": {
+                "KAFKA_HOST":"localhost",
+                "KAFKA_PORT":"2001",
+                "KAFKA_USERNAME":"kafka",
+                "KAFKA_PASSWORD":"1234",
+                "KAFKA_TOPIC":"test-topic",
+            },
+            "console": "integratedTerminal"
+        },
+        {
+            "cwd": "${workspaceRoot}/app",
+            "name": "Consumer",
+            "type": "python",
+            "request": "launch",
+            "program": "consumer",
+            "env": {
+                "KAFKA_HOST":"localhost",
+                "KAFKA_PORT":"2001",
+                "KAFKA_USERNAME":"kafka",
+                "KAFKA_PASSWORD":"1234",
+                "KAFKA_TOPIC":"test-topic",
+                "KAFKA_CONSUMER_GROUP_ID":"test-group-user",
+
+                "POSTGRES_HOST":"localhost",
+                "POSTGRES_PORT":"5432",
+                "POSTGRES_USER":"test",
+                "POSTGRES_PASSWORD":"1234",
+                "POSTGRES_DB":"test",
+                "POSTGRES_MIN_CONN":"1",
+                "POSTGRES_MAX_CONN":"5"
+            },
+            "console": "integratedTerminal"
+        }
+    ]
+}
