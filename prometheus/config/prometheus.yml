@@ -7,11 +7,17 @@ scrape_configs:
   #   metrics_path: /metrics
   #   static_configs:
   #     - targets:
-  #       - {ip v4 address}:9100
+  #       - {ip_v4_address}:9100
   
   # https://github.com/prometheus-community/windows_exporter/releases/tag/v0.24.0 (windows_exporter)
-  - job_name: Windows exporter
+  # - job_name: Windows exporter
+  #   metrics_path: /metrics
+  #   static_configs:
+  #     - targets:
+  #         - {ip_v4_address}:9182
+
+  - job_name: kafka-exporter
     metrics_path: /metrics
     static_configs:
       - targets:
-          - {ip v4 address}:9182
+          - {ip_v4_address}:9308
